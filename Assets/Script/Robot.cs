@@ -19,8 +19,8 @@ public class Robot : MonoBehaviour
     }
     void Start()
     {
-        //navMeshAgent.SetDestination(targetTransform.position);
         player = FindAnyObjectByType<FirstPersonController>();
+        if (player) navMeshAgent.SetDestination(player.transform.position);
     }
 
     // Update is called once per frame
