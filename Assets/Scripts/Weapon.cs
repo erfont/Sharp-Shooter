@@ -38,7 +38,8 @@ public class Weapon : MonoBehaviour
         {
             Enemyhealth enemyhealth = hit.collider.GetComponent<Enemyhealth>();
             enemyhealth?.TakeDamage(damageAmount); // if (enemyhealth) enemyhealth.TakeDamage(damageAmount);
-            Instantiate(HitVFXPrefab, hit.point, quaternion.identity);
+           
+            if (!hit.collider.CompareTag("InvisibleWall")) Instantiate(HitVFXPrefab, hit.point, quaternion.identity);
         }
 
         
