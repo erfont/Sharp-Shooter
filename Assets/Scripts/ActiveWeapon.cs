@@ -11,6 +11,8 @@ public class ActiveWeapon : MonoBehaviour
 
     const string SHOOT_STRING = "Shoot";
 
+    float timeSinceLastShot = 0f;
+
     void Awake()
     {
         starterAssetsInput = GetComponentInParent<StarterAssetsInputs>();
@@ -25,15 +27,26 @@ public class ActiveWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeSinceLastShot += Time.deltaTime;
+       
         HandleShoot();
+          
     }
 
     private void HandleShoot()
     {
         if (!starterAssetsInput.shoot) return;
+        if (timeSinceLastShot <= weaponSO.FireRate) return;
+
+        timeSinceLastShot = 0;           
         currentWeapon.Shoot(weaponSO);
         animator.Play(SHOOT_STRING, 0, 0f);
-        starterAssetsInput.ShootInput(false);
+
+        if (!weaponSO.IsAutomatic)
+        {
+            starterAssetsInput.ShootInput(false);
+        }
+        
 
   
     }
