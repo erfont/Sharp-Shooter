@@ -1028,6 +1028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 177580783}
   - component: {fileID: 177580784}
+  - component: {fileID: 177580785}
   m_Layer: 3
   m_Name: Active Weapon
   m_TagString: Untagged
@@ -1073,6 +1074,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &177580785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177580782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57b55362208e8d4e9f5b3f1dfd6a5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActiveWeapon
+  weaponSO: {fileID: 11400000, guid: 5d3594082d4a8014a9c6c67e8a86fdbc, type: 2}
 --- !u!1 &184892841
 GameObject:
   m_ObjectHideFlags: 0
@@ -19643,10 +19657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9022f6b5ca51d9a4d8c5c1ecfdc45502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  damageAmount: 1
   muzzleFlash: {fileID: 8037182662478259452}
-  HitVFXPrefab: {fileID: 6891147563488534199, guid: 344ad5625de2a904e8024acb63e00c24, type: 3}
-  animator: {fileID: 177580784}
 --- !u!1 &1329113368
 GameObject:
   m_ObjectHideFlags: 0
