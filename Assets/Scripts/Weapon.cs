@@ -1,4 +1,5 @@
 using StarterAssets;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -7,6 +8,10 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] int damageAmount = 1;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] GameObject HitVFXPrefab;
+    [SerializeField] Animator animator;
+
+    const string SHOOT_STRING = "Shoot";
 
     void Awake()
     {
@@ -24,6 +29,8 @@ public class Weapon : MonoBehaviour
         if (!starterAssetsInput.shoot) return false;
 
         muzzleFlash.Play();
+        animator.Play(SHOOT_STRING, 0, 0f);
+        starterAssetsInput.ShootInput(false);
 
         RaycastHit hit;
 
@@ -31,9 +38,10 @@ public class Weapon : MonoBehaviour
         {
             Enemyhealth enemyhealth = hit.collider.GetComponent<Enemyhealth>();
             enemyhealth?.TakeDamage(damageAmount); // if (enemyhealth) enemyhealth.TakeDamage(damageAmount);
+            Instantiate(HitVFXPrefab, hit.point, quaternion.identity);
         }
 
-        starterAssetsInput.ShootInput(false);
+        
         return true;
     }
 }
