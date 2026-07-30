@@ -5,6 +5,8 @@ public class Weapon : MonoBehaviour
 {
     StarterAssetsInputs starterAssetsInput;
 
+    [SerializeField] int damageAmount = 1;
+
     void Awake()
     {
         starterAssetsInput = GetComponentInParent<StarterAssetsInputs>();
@@ -12,19 +14,23 @@ public class Weapon : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {       
+    {
+        HandleShoot();
+    }
 
-       if (starterAssetsInput.shoot)
+    private bool HandleShoot()
+    {
+        if (!starterAssetsInput.shoot) return false;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
-            {
-                Debug.Log(hit.collider.name); 
-                
-            }
-
-            starterAssetsInput.ShootInput(false);
+            Enemyhealth enemyhealth = hit.collider.GetComponent<Enemyhealth>();
+            enemyhealth?.TakeDamage(damageAmount); // if (enemyhealth) enemyhealth.TakeDamage(damageAmount);
         }
 
+        starterAssetsInput.ShootInput(false);
+        return true;
     }
 }
