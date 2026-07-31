@@ -58,7 +58,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WeaponAnimator
+  m_Name: PistolAnimator
   serializedVersion: 6
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -89,7 +89,7 @@ AnimatorStateMachine:
     m_Position: {x: 336.45752, y: -13.882324, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7756763341667879095}
-    m_Position: {x: 291.82153, y: 220.07187, z: 0}
+    m_Position: {x: 280, y: 130, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
