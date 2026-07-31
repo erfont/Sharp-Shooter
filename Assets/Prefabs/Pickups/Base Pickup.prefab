@@ -154,7 +154,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3368585559656006573}
   - component: {fileID: 7170157518815818358}
+  - component: {fileID: 2842909600218018812}
+  - component: {fileID: 5998834168340554174}
   - component: {fileID: 1485531548304240974}
+  - component: {fileID: 795343084571610074}
   m_Layer: 0
   m_Name: Base Pickup
   m_TagString: Untagged
@@ -201,6 +204,56 @@ CapsuleCollider:
   m_Height: 1.36
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &2842909600218018812
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755723448221282416}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.03
+  m_Height: 1.28
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.39, z: 0}
+--- !u!54 &5998834168340554174
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755723448221282416}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1485531548304240974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,3 +267,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponPickup
   weaponSO: {fileID: 0}
+--- !u!114 &795343084571610074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755723448221282416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae51638aac16634baf58f16a952d2e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Launcher
+  direction: {x: 0.2, y: 1, z: 0.2}
+  speed: 3
