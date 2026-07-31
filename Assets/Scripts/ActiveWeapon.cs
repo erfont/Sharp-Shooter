@@ -21,6 +21,8 @@ public class ActiveWeapon : MonoBehaviour
 
     void Start()
     {
+                SwitchWeapon(weaponSO);
+
         currentWeapon = GetComponentInChildren<Weapon>();
     }
 
@@ -53,6 +55,15 @@ public class ActiveWeapon : MonoBehaviour
 
     public void SwitchWeapon(WeaponSO weaponSO)
     {
+        if (currentWeapon)
+        {
+            Destroy(currentWeapon.gameObject);
+        }
+
+        Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
+        currentWeapon = newWeapon;
+        this.weaponSO = weaponSO;
+
         Debug.Log("Player picked up " + weaponSO.name);
     }
 }
