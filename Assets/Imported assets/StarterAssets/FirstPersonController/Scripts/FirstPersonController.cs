@@ -199,7 +199,7 @@ namespace StarterAssets
 		}
 
 		private void JumpAndGravity()
-		{
+		 {
 			if (Grounded)
 			{
 				// reset the fall timeout timer

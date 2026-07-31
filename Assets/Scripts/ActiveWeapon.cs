@@ -64,6 +64,8 @@ public class ActiveWeapon : MonoBehaviour
         currentWeapon = newWeapon;
         this.weaponSO = weaponSO;
 
+        animator.runtimeAnimatorController = weaponSO.weaponAnimator;
+        
         Debug.Log("Player picked up " + weaponSO.name);
     }
 }

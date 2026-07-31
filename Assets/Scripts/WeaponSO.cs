@@ -8,5 +8,6 @@ public class WeaponSO : ScriptableObject
     public GameObject HitVFXPrefab;
     public GameObject weaponPrefab;
     public bool IsAutomatic = false;
+    public RuntimeAnimatorController weaponAnimator;
 
 }

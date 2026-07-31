@@ -17,3 +17,4 @@ MonoBehaviour:
   HitVFXPrefab: {fileID: 6891147563488534199, guid: 344ad5625de2a904e8024acb63e00c24, type: 3}
   weaponPrefab: {fileID: 4643152921692253481, guid: 7994fccd315f7d24dbeaaf5adab9e526, type: 3}
   IsAutomatic: 0
+  weaponAnimator: {fileID: 9100000, guid: baa4faeabbcf3a84a9e2bf214b5bbb27, type: 2}
