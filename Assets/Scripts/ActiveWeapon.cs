@@ -50,4 +50,9 @@ public class ActiveWeapon : MonoBehaviour
 
   
     }
+
+    public void SwitchWeapon(WeaponSO weaponSO)
+    {
+        Debug.Log("Player picked up " + weaponSO.name);
+    }
 }
