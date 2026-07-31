@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 319796440424259623}
   - component: {fileID: 2336587270500287171}
   - component: {fileID: 2414670532562735873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8350167263705138090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,9 +158,9 @@ GameObject:
   - component: {fileID: 5998834168340554174}
   - component: {fileID: 1485531548304240974}
   - component: {fileID: 795343084571610074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Base Pickup
-  m_TagString: Untagged
+  m_TagString: NonShootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,4 +280,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Launcher
   direction: {x: 0.2, y: 1, z: 0.2}
-  speed: 3
+  maxSpeed: 10
+  minSpeed: 5

@@ -4,6 +4,7 @@ public class Enemyhealth : MonoBehaviour
 {
 
     [SerializeField] int MaxHealth = 3;
+    [SerializeField] Launcher enemyDrop;
     int currentHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,10 @@ public class Enemyhealth : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
-        if (currentHealth <= 0) Destroy(this.gameObject);
+        if (currentHealth <= 0) 
+        {
+            Destroy(this.gameObject);
+            if (enemyDrop) Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
+        }
     }
 }

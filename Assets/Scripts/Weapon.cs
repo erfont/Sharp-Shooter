@@ -9,11 +9,13 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         muzzleFlash.Play();
 
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
+        int layerMask = 1 << LayerMask.NameToLayer("NonShootable");
+
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, ~layerMask)) // Invert the mask using '~' to hit everything except 'IgnoreCast'
         {
             Enemyhealth enemyhealth = hit.collider.GetComponent<Enemyhealth>();
             enemyhealth?.TakeDamage(weaponSO.Damage); // if (enemyhealth) enemyhealth.TakeDamage(weaponSO.Damage);
-            if (!hit.collider.CompareTag("InvisibleWall")) Instantiate(weaponSO.HitVFXPrefab, hit.point, Quaternion.identity);
+            if (!hit.collider.CompareTag("NonShootable")) Instantiate(weaponSO.HitVFXPrefab, hit.point, Quaternion.identity);
         }
 
         
