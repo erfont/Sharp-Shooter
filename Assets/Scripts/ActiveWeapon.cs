@@ -52,7 +52,19 @@ public class ActiveWeapon : MonoBehaviour
     {
         if (isReset) currentAmmo = amount;
         else currentAmmo += amount;
-        ammoText.text = currentAmmo.ToString("D2");
+        SetAmmoText(currentAmmo);   
+    }
+
+    public void AdjustAmmoPercentage(int percent)
+    {
+        int amount = Mathf.RoundToInt(currentWeaponSO.magazineSize * percent / 100);
+        currentAmmo += amount;     
+        SetAmmoText(currentAmmo);   
+    }
+
+    private void SetAmmoText(int ammo)
+    {
+        ammoText.text = ammo.ToString("D2");
     }
 
     private void HandleShoot()

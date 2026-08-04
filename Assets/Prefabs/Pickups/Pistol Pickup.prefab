@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5bbc080a634494287be7fb63cbb205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConstantFloater
-  amplitude: 0.5
+  amplitude: 0.2
   max_frequency: 1
 --- !u!114 &1164439292516570116
 MonoBehaviour:
