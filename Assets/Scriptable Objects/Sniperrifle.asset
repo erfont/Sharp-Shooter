@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Sniperrifle
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
   Damage: 5
-  FireRate: 1
+  FireRate: 1.5
   HitVFXPrefab: {fileID: 6891147563488534199, guid: 344ad5625de2a904e8024acb63e00c24, type: 3}
+  weaponPrefab: {fileID: 5945019609705917033, guid: 106cd00c248b99f4283633519279b3b4, type: 3}
   IsAutomatic: 0
+  weaponAnimator: {fileID: 9100000, guid: eca424125c29c474080da20d6dab8a9b, type: 2}
