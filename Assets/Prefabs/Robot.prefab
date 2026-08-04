@@ -4990,6 +4990,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemyhealth
   MaxHealth: 3
   enemyDrop: {fileID: 0}
+  enemyDrops:
+  - {fileID: 4745470491821741922, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
+  - {fileID: 4745470491821741922, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
+  - {fileID: 7113678008293958375, guid: 46b0c2e9823b59a44a44b38ed624fe9e, type: 3}
+  - {fileID: 4745470491821741922, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
 --- !u!95 &5578196365197258530
 Animator:
   serializedVersion: 7

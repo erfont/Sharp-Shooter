@@ -5,6 +5,7 @@ public class Enemyhealth : MonoBehaviour
 
     [SerializeField] int MaxHealth = 3;
     [SerializeField] Launcher enemyDrop;
+    [SerializeField] Launcher[] enemyDrops;
     int currentHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +26,12 @@ public class Enemyhealth : MonoBehaviour
         if (currentHealth <= 0) 
         {
             Destroy(this.gameObject);
-            if (enemyDrop) Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
+            // if (enemyDrop) Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
+            if (enemyDrops.Length>0)
+            {
+                int index = Random.Range(0, enemyDrops.Length);
+                Instantiate(enemyDrops[index], this.transform.position, Quaternion.identity);
+            }
         }
     }
 }

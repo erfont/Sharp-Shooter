@@ -23373,7 +23373,7 @@ PrefabInstance:
     - target: {fileID: 2346212660385974188, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: f521d826e725c934788878e41d7d3f6f, type: 2}
     - target: {fileID: 3765620472383638346, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: weaponSO
       value: 
@@ -28611,5 +28611,5 @@ SceneRoots:
   - {fileID: 22798150}
   - {fileID: 497704481768628498}
   - {fileID: 6969609477692855056}
-  - {fileID: 1584846338}
   - {fileID: 2067438632}
+  - {fileID: 1584846338}
