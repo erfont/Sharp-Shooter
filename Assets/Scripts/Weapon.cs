@@ -1,13 +1,22 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     [SerializeField] ParticleSystem muzzleFlash;
+
+    CinemachineImpulseSource impulseSource;
+
+    private void Awake() 
+    {
+        impulseSource = GetComponent<CinemachineImpulseSource>();    
+    }
         
     public void Shoot(WeaponSO weaponSO)
     {
         RaycastHit hit;
         muzzleFlash.Play();
+        impulseSource.GenerateImpulse();
 
         int layerMask = 1 << LayerMask.NameToLayer("NonShootable");
 

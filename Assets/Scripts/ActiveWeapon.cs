@@ -10,6 +10,7 @@ public class ActiveWeapon : MonoBehaviour
 
     [SerializeField] WeaponSO startWeaponSO;
     [SerializeField] CinemachineVirtualCamera playerFollowCamera;
+    [SerializeField] Camera weaponCamera;
     [SerializeField] GameObject zoomVignette;
     [SerializeField] TMP_Text ammoText;
 
@@ -93,12 +94,14 @@ public class ActiveWeapon : MonoBehaviour
         {
             zoomVignette.SetActive(true);
             playerFollowCamera.m_Lens.FieldOfView = currentWeaponSO.ZoomAmount;
+            weaponCamera.fieldOfView = currentWeaponSO.ZoomAmount; // gets the sniper rifle tip off the vignette
             firstPersonController.ChangeRotationSpeed(currentWeaponSO.ZoomRotationSpeed);
         }
         else 
         {
             zoomVignette.SetActive(false);
             playerFollowCamera.m_Lens.FieldOfView = defaultFOV;
+            weaponCamera.fieldOfView = defaultFOV;
             firstPersonController.ChangeRotationSpeed(defaultZoomRotationSpeed);
 
         }
