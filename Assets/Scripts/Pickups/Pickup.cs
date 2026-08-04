@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public abstract class Pickup : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    const string PLAYER_STRING = "Player";
+    void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag(PLAYER_STRING))
+        {
+            ActiveWeapon activeWeapon = other.GetComponentInChildren<ActiveWeapon>();
+            OnPickup(activeWeapon);
+            Destroy(this.gameObject);
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected abstract void OnPickup(ActiveWeapon activeWeapon);
 }

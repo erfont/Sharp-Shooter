@@ -20,3 +20,6 @@ MonoBehaviour:
   weaponAnimator: {fileID: 9100000, guid: eca424125c29c474080da20d6dab8a9b, type: 2}
   CanZoom: 1
   ZoomAmount: 10
+  ZoomRotationSpeed: 0.3
+  magazineSize: 3
+  shootDistance: 30

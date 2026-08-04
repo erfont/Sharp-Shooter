@@ -1,4 +1,5 @@
 using StarterAssets;
+using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -7,16 +8,19 @@ public class ActiveWeapon : MonoBehaviour
     StarterAssetsInputs starterAssetsInput;
     Weapon currentWeapon;
 
-    [SerializeField] WeaponSO weaponSO;
+    [SerializeField] WeaponSO startWeaponSO;
     [SerializeField] CinemachineVirtualCamera playerFollowCamera;
     [SerializeField] GameObject zoomVignette;
+    [SerializeField] TMP_Text ammoText;
 
     Animator animator;
 
     const string SHOOT_STRING = "Shoot";
     float timeSinceLastShot = 0f;
     float defaultFOV, defaultZoomRotationSpeed;
+    int currentAmmo;
     FirstPersonController firstPersonController;
+    WeaponSO currentWeaponSO;
 
     void Awake()
     {
@@ -29,9 +33,9 @@ public class ActiveWeapon : MonoBehaviour
 
     void Start()
     {
-        SwitchWeapon(weaponSO);
-
+        SwitchWeapon(startWeaponSO, true);
         currentWeapon = GetComponentInChildren<Weapon>();
+        AdjustAmmo(currentWeaponSO.magazineSize, true);
     }
 
     // Update is called once per frame
@@ -44,16 +48,25 @@ public class ActiveWeapon : MonoBehaviour
           
     }
 
+    public void AdjustAmmo(int amount, bool isReset)
+    {
+        if (isReset) currentAmmo = amount;
+        else currentAmmo += amount;
+        ammoText.text = currentAmmo.ToString("D2");
+    }
+
     private void HandleShoot()
     {
         if (!starterAssetsInput.shoot) return;
-        if (timeSinceLastShot <= weaponSO.FireRate) return;
+        if (timeSinceLastShot <= currentWeaponSO.FireRate) return;
+        if (currentAmmo <= 0) return;
 
-        timeSinceLastShot = 0;           
-        currentWeapon.Shoot(weaponSO);
+        timeSinceLastShot = 0;    
+        AdjustAmmo(-1, false);       
+        currentWeapon.Shoot(currentWeaponSO);
         animator.Play(SHOOT_STRING, 0, 0f);
 
-        if (!weaponSO.IsAutomatic)
+        if (!currentWeaponSO.IsAutomatic)
         {
             starterAssetsInput.ShootInput(false);
         }
@@ -63,12 +76,12 @@ public class ActiveWeapon : MonoBehaviour
 
     private void HandleZoom()
     {
-        if (!weaponSO.CanZoom) return;
+        if (!currentWeaponSO.CanZoom) return;
         if (starterAssetsInput.zoom)
         {
             zoomVignette.SetActive(true);
-            playerFollowCamera.m_Lens.FieldOfView = weaponSO.ZoomAmount;
-            firstPersonController.ChangeRotationSpeed(weaponSO.ZoomRotationSpeed);
+            playerFollowCamera.m_Lens.FieldOfView = currentWeaponSO.ZoomAmount;
+            firstPersonController.ChangeRotationSpeed(currentWeaponSO.ZoomRotationSpeed);
         }
         else 
         {
@@ -80,19 +93,36 @@ public class ActiveWeapon : MonoBehaviour
         
     }
 
-    public void SwitchWeapon(WeaponSO weaponSO)
+    public void SwitchWeapon(WeaponSO weaponSO, bool isStart)
     {
-        if (currentWeapon)
+        if (isStart)
         {
-            Destroy(currentWeapon.gameObject);
+            Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
+            currentWeapon = newWeapon;
+            this.currentWeaponSO = weaponSO;
+            this.AdjustAmmo(weaponSO.magazineSize, false);
+            animator.runtimeAnimatorController = weaponSO.weaponAnimator;
+            Debug.Log("Player starts with " + weaponSO.name); 
+            return;
         }
 
-        Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
-        currentWeapon = newWeapon;
-        this.weaponSO = weaponSO;
-
-        animator.runtimeAnimatorController = weaponSO.weaponAnimator;
+        if (!weaponSO.name.Equals(currentWeaponSO.name))
+        {
+            Destroy(currentWeapon.gameObject);
+            Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
+            currentWeapon = newWeapon;
+            this.currentWeaponSO = weaponSO;
+            this.AdjustAmmo(weaponSO.magazineSize, true);
+            animator.runtimeAnimatorController = weaponSO.weaponAnimator;
+            Debug.Log("Player picked up " + weaponSO.name); 
+        }
+        else
+        {
+            this.AdjustAmmo(weaponSO.magazineSize, false);
+            Debug.Log("Player got " + currentWeaponSO.magazineSize + " " + currentWeaponSO.name + "rounds");
+        }
+  
         
-        Debug.Log("Player picked up " + weaponSO.name);
+        
     }
 }

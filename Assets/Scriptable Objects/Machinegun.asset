@@ -18,3 +18,8 @@ MonoBehaviour:
   weaponPrefab: {fileID: 5097992988251401786, guid: 0ac5b6c29573c4a43988b62364dae22d, type: 3}
   IsAutomatic: 1
   weaponAnimator: {fileID: 9100000, guid: 0a5bb886915521a4e8b8abce58190bb6, type: 2}
+  CanZoom: 0
+  ZoomAmount: 10
+  ZoomRotationSpeed: 0.3
+  magazineSize: 25
+  shootDistance: 12
