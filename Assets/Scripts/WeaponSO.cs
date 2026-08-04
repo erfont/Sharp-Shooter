@@ -9,5 +9,8 @@ public class WeaponSO : ScriptableObject
     public GameObject weaponPrefab;
     public bool IsAutomatic = false;
     public RuntimeAnimatorController weaponAnimator;
+    public bool CanZoom = false;
+    public float ZoomAmount = 10f;
+    public float ZoomRotationSpeed = .3f;
 
 }

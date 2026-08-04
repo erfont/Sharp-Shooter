@@ -1,4 +1,5 @@
 using StarterAssets;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class ActiveWeapon : MonoBehaviour
@@ -7,21 +8,28 @@ public class ActiveWeapon : MonoBehaviour
     Weapon currentWeapon;
 
     [SerializeField] WeaponSO weaponSO;
+    [SerializeField] CinemachineVirtualCamera playerFollowCamera;
+    [SerializeField] GameObject zoomVignette;
+
     Animator animator;
 
     const string SHOOT_STRING = "Shoot";
-
     float timeSinceLastShot = 0f;
+    float defaultFOV, defaultZoomRotationSpeed;
+    FirstPersonController firstPersonController;
 
     void Awake()
     {
         starterAssetsInput = GetComponentInParent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
+        defaultFOV = playerFollowCamera.m_Lens.FieldOfView;
+        firstPersonController = GetComponentInParent<FirstPersonController>();
+        defaultZoomRotationSpeed = firstPersonController.RotationSpeed;
     }
 
     void Start()
     {
-                SwitchWeapon(weaponSO);
+        SwitchWeapon(weaponSO);
 
         currentWeapon = GetComponentInChildren<Weapon>();
     }
@@ -32,6 +40,7 @@ public class ActiveWeapon : MonoBehaviour
         timeSinceLastShot += Time.deltaTime;
        
         HandleShoot();
+        HandleZoom();
           
     }
 
@@ -49,8 +58,26 @@ public class ActiveWeapon : MonoBehaviour
             starterAssetsInput.ShootInput(false);
         }
         
-
   
+    }
+
+    private void HandleZoom()
+    {
+        if (!weaponSO.CanZoom) return;
+        if (starterAssetsInput.zoom)
+        {
+            zoomVignette.SetActive(true);
+            playerFollowCamera.m_Lens.FieldOfView = weaponSO.ZoomAmount;
+            firstPersonController.ChangeRotationSpeed(weaponSO.ZoomRotationSpeed);
+        }
+        else 
+        {
+            zoomVignette.SetActive(false);
+            playerFollowCamera.m_Lens.FieldOfView = defaultFOV;
+            firstPersonController.ChangeRotationSpeed(defaultZoomRotationSpeed);
+
+        }
+        
     }
 
     public void SwitchWeapon(WeaponSO weaponSO)
