@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5998834168340554174, guid: 1201191a8d6ef6149a855dd471451017, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 8755723448221282416, guid: 1201191a8d6ef6149a855dd471451017, type: 3}
       propertyPath: m_Name
       value: Sniper Rifle Pickup
