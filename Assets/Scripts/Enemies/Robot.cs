@@ -26,7 +26,7 @@ public class Robot : MonoBehaviour
     void Update()
     {
         if (target) navMeshAgent.SetDestination(target.transform.position);
-        else navMeshAgent.SetDestination(player.transform.position);
+        else if (player) navMeshAgent.SetDestination(player.transform.position);
     }
 
     void OnTriggerEnter(Collider other)
