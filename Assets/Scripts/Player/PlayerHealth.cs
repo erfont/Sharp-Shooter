@@ -6,7 +6,9 @@ using System;
 public class PlayerHealth : MonoBehaviour
 {
     [Range(1,10)]
-    [SerializeField] int MaxHealth = 10;
+    [SerializeField] public int StartHealth = 5;
+    [Range(1,10)]
+    [SerializeField] public int MaxHealth = 10;
     [SerializeField] CinemachineVirtualCamera deathVirtualCamera;
     [SerializeField] Transform weaponCamera;
     [SerializeField] Image[] shieldBars;
@@ -15,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentHealth = MaxHealth;
+        currentHealth = StartHealth;
         AdjustShieldUI();
     }
 
@@ -36,6 +38,15 @@ public class PlayerHealth : MonoBehaviour
             deathVirtualCamera.Priority = gameOverVirtualCameraPriority;
             Destroy(this.gameObject);
         }
+    }
+
+    public void Heal(int amount)
+    {
+        Debug.Log("From "+ currentHealth + " adding "+ amount);
+        if (currentHealth + amount > MaxHealth) currentHealth = MaxHealth;
+        else currentHealth += amount;
+        AdjustShieldUI();
+
     }
 
     private void AdjustShieldUI()

@@ -89,7 +89,15 @@ public class ActiveWeapon : MonoBehaviour
 
     private void HandleZoom()
     {
-        if (!currentWeaponSO.CanZoom) return;
+        if (!currentWeaponSO.CanZoom)
+        {
+            zoomVignette.SetActive(false);
+            playerFollowCamera.m_Lens.FieldOfView = defaultFOV;
+            weaponCamera.fieldOfView = defaultFOV;
+            firstPersonController.ChangeRotationSpeed(defaultZoomRotationSpeed);
+            return;
+        }
+                
         if (starterAssetsInput.zoom)
         {
             zoomVignette.SetActive(true);

@@ -18,7 +18,6 @@ public class SpawnGate : MonoBehaviour
     {
         while (player)
         {
-            Debug.Log("hi");
             Instantiate(robotPrefab, spawnPoint.position, transform.rotation);
             yield return new WaitForSeconds(spawnTime);
         }
