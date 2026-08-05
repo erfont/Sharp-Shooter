@@ -10,7 +10,7 @@ public class Robot : MonoBehaviour
 
     FirstPersonController player;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    const string PLAYER_STRING = "Player";
 
     void Awake()
     {
@@ -23,10 +23,18 @@ public class Robot : MonoBehaviour
         if (player) navMeshAgent.SetDestination(player.transform.position);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (target) navMeshAgent.SetDestination(target.transform.position);
         else navMeshAgent.SetDestination(player.transform.position);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(PLAYER_STRING))
+        {
+            Enemyhealth enemyHealth = GetComponent<Enemyhealth>();
+            enemyHealth.SelfDestruct();    
+        }
     }
 }

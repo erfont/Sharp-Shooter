@@ -25,13 +25,18 @@ public class Enemyhealth : MonoBehaviour
 
         if (currentHealth <= 0) 
         {
-            Destroy(this.gameObject);
+            SelfDestruct();
+        }
+    }
+
+    public void SelfDestruct()
+    {
+        Destroy(this.gameObject);
             Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
             if (enemyDrops.Length>0)
             {
                 int index = Random.Range(0, enemyDrops.Length);
                 Instantiate(enemyDrops[index], this.transform.position, Quaternion.identity);
             }
-        }
     }
 }
