@@ -129,7 +129,8 @@ public class ActiveWeapon : MonoBehaviour
             this.currentWeaponSO = weaponSO;
             this.AdjustAmmo(weaponSO.magazineSize, true);
             animator.runtimeAnimatorController = weaponSO.weaponAnimator;
-            Debug.Log("Player picked up " + weaponSO.name); 
+            Debug.Log("Player picked up " + weaponSO.name);
+            timeSinceLastShot = currentWeaponSO.FireRate; 
         }
         else
         {
