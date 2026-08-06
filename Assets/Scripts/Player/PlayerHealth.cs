@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using Unity.Cinemachine;
 using UnityEngine;
 using System;
+using StarterAssets;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,12 +13,15 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera deathVirtualCamera;
     [SerializeField] Transform weaponCamera;
     [SerializeField] Image[] shieldBars;
+    [SerializeField] GameObject gameOverContainer;
+    [SerializeField] Image crossHair;
     int currentHealth;
     int gameOverVirtualCameraPriority = 20;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = StartHealth;
+        crossHair.enabled = true;
         AdjustShieldUI();
     }
 
@@ -34,10 +38,19 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            weaponCamera.parent = null; // un-parent the camera before destroy its parent on player death
-            deathVirtualCamera.Priority = gameOverVirtualCameraPriority;
-            Destroy(this.gameObject);
+            PlayerGameOver();
         }
+    }
+
+    private void PlayerGameOver()
+    {
+        weaponCamera.parent = null; // un-parent the camera before destroy its parent on player death
+        deathVirtualCamera.Priority = gameOverVirtualCameraPriority;
+        gameOverContainer.SetActive(true);
+        StarterAssetsInputs starterAssetsInputs = FindAnyObjectByType<StarterAssetsInputs>();
+        starterAssetsInputs.SetCursorState(false);
+        crossHair.enabled = false;
+        Destroy(this.gameObject);
     }
 
     public void Heal(int amount)
