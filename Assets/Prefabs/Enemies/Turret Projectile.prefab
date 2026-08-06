@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   speed: 30
+  hitVFX: {fileID: 6891147563488534199, guid: 7e87bd5453694154faf35418722ac313, type: 3}
 --- !u!54 &262331428835777985
 Rigidbody:
   m_ObjectHideFlags: 0

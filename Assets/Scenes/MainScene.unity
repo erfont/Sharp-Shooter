@@ -21625,6 +21625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Spawn Gate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3830465369769887360, guid: 714ac1863701e5d4587927593a463985, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5461732981199988748, guid: 714ac1863701e5d4587927593a463985, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -30831,6 +30835,10 @@ PrefabInstance:
     - target: {fileID: 3830465369769887360, guid: 714ac1863701e5d4587927593a463985, type: 3}
       propertyPath: m_Name
       value: Enemy Spawn Gate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830465369769887360, guid: 714ac1863701e5d4587927593a463985, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

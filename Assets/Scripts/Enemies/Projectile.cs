@@ -4,6 +4,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
    [SerializeField] float speed = 30f;
+   [SerializeField] GameObject hitVFX;
    Rigidbody rb;
 
    int damage;
@@ -27,6 +28,7 @@ public class Projectile : MonoBehaviour
     {
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         playerHealth?.TakeDamage(damage);
+        Instantiate(hitVFX, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }
