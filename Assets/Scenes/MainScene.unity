@@ -1777,7 +1777,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.12666667
+  m_VoxelSize: 0.25
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 7d8a930e277daf143abc99ad166b4dd9, type: 2}
   m_BuildHeightMesh: 0
@@ -1946,7 +1946,7 @@ GameObject:
   - component: {fileID: 283925497}
   - component: {fileID: 283925496}
   - component: {fileID: 283925495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2041,7 +2041,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.35519546, z: -0, w: 0.9347921}
   m_LocalPosition: {x: -28.104809, y: 0.49999946, z: 21.93047}
-  m_LocalScale: {x: 3, y: 4, z: 3}
+  m_LocalScale: {x: 4.3094997, y: 4, z: 6.0375004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275646751}
@@ -2480,9 +2480,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892040671}
     m_Modifications:
+    - target: {fileID: 663927262357180843, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3697587241265130696, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
       propertyPath: m_Name
       value: Machinegun Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379166048110629712, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7236566273500962581, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2742,6 +2750,14 @@ PrefabInstance:
     - target: {fileID: 5120278999605734032, guid: 46b0c2e9823b59a44a44b38ed624fe9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347771939930825020, guid: 46b0c2e9823b59a44a44b38ed624fe9e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927481949776340693, guid: 46b0c2e9823b59a44a44b38ed624fe9e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11472,7 +11488,7 @@ GameObject:
   - component: {fileID: 518347185}
   - component: {fileID: 518347184}
   - component: {fileID: 518347183}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11566,8 +11582,8 @@ Transform:
   m_GameObject: {fileID: 518347182}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.39481, y: 0.49999946, z: 17.420471}
-  m_LocalScale: {x: 2, y: 3, z: 2}
+  m_LocalPosition: {x: -30.12, y: 0.49999946, z: 17.86}
+  m_LocalScale: {x: 3.538, y: 3, z: 3.2102}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275646751}
@@ -11912,6 +11928,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580300010}
   m_CullTransparentMesh: 1
+--- !u!1 &580696187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580696188}
+  - component: {fileID: 580696189}
+  m_Layer: 0
+  m_Name: NavMesh Link (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &580696188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580696187}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.26149076, z: -0, w: 0.965206}
+  m_LocalPosition: {x: -12.68, y: -7.7, z: -2.27}
+  m_LocalScale: {x: 0.6322991, y: 0.39877152, z: 0.56471676}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1619936493}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &580696189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580696187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
+  m_SerializedVersion: 1
+  m_AgentTypeID: 0
+  m_StartPoint: {x: -0.048443224, y: -0.118778944, z: 1.7957934}
+  m_EndPoint: {x: -2.5653577, y: 1.4442949, z: 0.3509609}
+  m_StartTransform: {fileID: 0}
+  m_EndTransform: {fileID: 0}
+  m_Activated: 1
+  m_Width: 0
+  m_CostModifier: 1
+  m_IsOverridingCost: 0
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 0
+  m_Area: 0
 --- !u!4 &611341018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7236566273500962581, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
@@ -22112,7 +22185,7 @@ GameObject:
   - component: {fileID: 1010701164}
   - component: {fileID: 1010701163}
   - component: {fileID: 1010701162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22206,8 +22279,8 @@ Transform:
   m_GameObject: {fileID: 1010701161}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.39481, y: 0.49999946, z: 16.420471}
-  m_LocalScale: {x: 3.8442, y: 2, z: 2}
+  m_LocalPosition: {x: -30.4, y: 0.49999946, z: 15.33}
+  m_LocalScale: {x: 6.387138, y: 2, z: 4.408366}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275646751}
@@ -23485,7 +23558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1275646751}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25587,11 +25660,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1caac88a93f280c4d9a310f1aa7551f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.69481
+      value: -17.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1caac88a93f280c4d9a310f1aa7551f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1caac88a93f280c4d9a310f1aa7551f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26257,7 +26330,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.12666667
+  m_VoxelSize: 0.25
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 51414b8a39540834abac07650df6ef23, type: 2}
   m_BuildHeightMesh: 0
@@ -26489,6 +26562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 6379166048110629712, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7236566273500962581, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.451649
@@ -26529,6 +26606,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7640455487432316532, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26564,6 +26645,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1547498875}
+  - {fileID: 1901853772}
+  - {fileID: 580696188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631086635
@@ -26812,6 +26895,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892040671}
     m_Modifications:
+    - target: {fileID: 839009727641127319, guid: 85002b6df1ec5ef4d8a2112bc603b633, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 975333401895725669, guid: 85002b6df1ec5ef4d8a2112bc603b633, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2588812052005549718, guid: 85002b6df1ec5ef4d8a2112bc603b633, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.585522
@@ -26852,9 +26943,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8387971295548820548, guid: 85002b6df1ec5ef4d8a2112bc603b633, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8805614502885598177, guid: 85002b6df1ec5ef4d8a2112bc603b633, type: 3}
       propertyPath: m_Name
       value: Large Crate Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805614502885598177, guid: 85002b6df1ec5ef4d8a2112bc603b633, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29092,6 +29191,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892040671}
     m_Modifications:
+    - target: {fileID: 285598501908801176, guid: 025db22c92b3f4445a87b97df663372b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 422054385843733866, guid: 025db22c92b3f4445a87b97df663372b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3283964176261937771, guid: 025db22c92b3f4445a87b97df663372b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.341824
@@ -29135,6 +29242,14 @@ PrefabInstance:
     - target: {fileID: 8380180074841714460, guid: 025db22c92b3f4445a87b97df663372b, type: 3}
       propertyPath: m_Name
       value: Small Crate Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380180074841714460, guid: 025db22c92b3f4445a87b97df663372b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797708956582887609, guid: 025db22c92b3f4445a87b97df663372b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29512,7 +29627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1892040671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collectibles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29544,6 +29659,63 @@ Transform:
   - {fileID: 1048429037}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1901853771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1901853772}
+  - component: {fileID: 1901853773}
+  m_Layer: 0
+  m_Name: NavMesh Link
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1901853772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901853771}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.26149076, z: -0, w: 0.965206}
+  m_LocalPosition: {x: -14.560059, y: -9.487483, z: -11.675076}
+  m_LocalScale: {x: 0.6322991, y: 0.39877152, z: 0.56471676}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1619936493}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1901853773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901853771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
+  m_SerializedVersion: 1
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0.0000016871185, y: -0.7493951, z: -1.9574698}
+  m_EndPoint: {x: 0.0000014255146, y: 0.74939513, z: 1.9574691}
+  m_StartTransform: {fileID: 0}
+  m_EndTransform: {fileID: 0}
+  m_Activated: 1
+  m_Width: 0
+  m_CostModifier: 1
+  m_IsOverridingCost: 0
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 0
+  m_Area: 0
 --- !u!4 &1905413617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2588812052005549718, guid: 85002b6df1ec5ef4d8a2112bc603b633, type: 3}
@@ -32443,6 +32615,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8347771939930825020, guid: 46b0c2e9823b59a44a44b38ed624fe9e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927481949776340693, guid: 46b0c2e9823b59a44a44b38ed624fe9e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32972,9 +33152,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892040671}
     m_Modifications:
+    - target: {fileID: 663927262357180843, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3697587241265130696, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
       propertyPath: m_Name
       value: Machinegun Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379166048110629712, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7236566273500962581, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33098,6 +33286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 6379166048110629712, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7236566273500962581, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.929758
@@ -33137,6 +33329,10 @@ PrefabInstance:
     - target: {fileID: 7236566273500962581, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640455487432316532, guid: 77b6d298f71f3874687532cbe633fc53, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
