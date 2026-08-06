@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3214929106315185963}
-  - component: {fileID: 7961616485797799563}
   - component: {fileID: 2937526859447005561}
+  - component: {fileID: 7961616485797799563}
   - component: {fileID: 7725935895953772881}
   m_Layer: 0
   m_Name: Enemy Spawn Gate
@@ -36,21 +36,6 @@ Transform:
   - {fileID: 5461732981199988748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -122.714, z: 0}
---- !u!114 &7961616485797799563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830465369769887360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7c59e29eaa3bb438777add02bbc45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemyhealth
-  MaxHealth: 10
-  enemyDrops: []
-  robotExplosionVFX: {fileID: 1482150934230941238, guid: 1b64ef92ea1c68f47aab59bbe4640542, type: 3}
 --- !u!65 &2937526859447005561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72,6 +57,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0254614, y: 2.5750546, z: 0.49208546}
   m_Center: {x: -0.026517037, y: 0.27, z: 0.042102482}
+--- !u!114 &7961616485797799563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830465369769887360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7c59e29eaa3bb438777add02bbc45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemyhealth
+  MaxHealth: 10
+  enemyDrops:
+  - {fileID: 4745470491821741922, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
+  - {fileID: 7113678008293958375, guid: 46b0c2e9823b59a44a44b38ed624fe9e, type: 3}
+  - {fileID: 7703699217494316596, guid: 7eec66b5a939b9644b9e2b3c1fda4631, type: 3}
+  - {fileID: 7703699217494316596, guid: 7eec66b5a939b9644b9e2b3c1fda4631, type: 3}
+  - {fileID: 1511427608886350011, guid: 463f598267d15e24ba9f4750c89caae5, type: 3}
+  robotExplosionVFX: {fileID: 1482150934230941238, guid: 1b64ef92ea1c68f47aab59bbe4640542, type: 3}
 --- !u!114 &7725935895953772881
 MonoBehaviour:
   m_ObjectHideFlags: 0

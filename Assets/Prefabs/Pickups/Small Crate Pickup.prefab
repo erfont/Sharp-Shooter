@@ -67,30 +67,46 @@ PrefabInstance:
     - target: {fileID: 2803718223126166167, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5d39eafbc33c7184a95c0eaff04878e5, type: 2}
+      objectReference: {fileID: 2100000, guid: 0abe9ad457d31dd4d9c3b8ac89a1a69e, type: 2}
     - target: {fileID: 4261271536444070856, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 4261271536444070856, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 0.683
       objectReference: {fileID: 0}
     - target: {fileID: 4261271536444070856, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.459
+      value: 0.527
       objectReference: {fileID: 0}
     - target: {fileID: 5512164000469971252, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: m_Name
       value: Small Crate Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 8647951920483250292, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
+      propertyPath: m_Color.a
+      value: 0.94509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647951920483250292, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.04045032
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647951920483250292, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647951920483250292, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.051713068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647951920483250292, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: m_Intensity
-      value: 0.06
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8647951920483250292, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: m_ColorTemperature
-      value: 2179
+      value: 2738
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -125,7 +125,6 @@ public class ActiveWeapon : MonoBehaviour
             this.currentWeaponSO = weaponSO;
             this.AdjustAmmo(weaponSO.magazineSize, false);
             animator.runtimeAnimatorController = weaponSO.weaponAnimator;
-            Debug.Log("Player starts with " + weaponSO.name); 
             return;
         }
 
@@ -137,13 +136,11 @@ public class ActiveWeapon : MonoBehaviour
             this.currentWeaponSO = weaponSO;
             this.AdjustAmmo(weaponSO.magazineSize, true);
             animator.runtimeAnimatorController = weaponSO.weaponAnimator;
-            Debug.Log("Player picked up " + weaponSO.name);
             timeSinceLastShot = currentWeaponSO.FireRate; 
         }
         else
         {
             this.AdjustAmmo(weaponSO.magazineSize, false);
-            Debug.Log("Player got " + currentWeaponSO.magazineSize + " " + currentWeaponSO.name + "rounds");
         }
   
         

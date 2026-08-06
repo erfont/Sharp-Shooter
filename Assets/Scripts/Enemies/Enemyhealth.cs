@@ -19,24 +19,51 @@ public class Enemyhealth : MonoBehaviour
         
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount, string weaponName)
     {
         currentHealth -= damageAmount;
 
         if (currentHealth <= 0) 
         {
-            SelfDestruct();
+            SelfDestruct(GetDropTypeFromWeapon(weaponName));
         }
     }
 
-    public void SelfDestruct()
+    public void SelfDestruct(int dropType)
     {
+        if (dropType > (enemyDrops.Length - 1)) dropType = 0;
+
+        int dropIndex = 0;
+
+        switch (dropType)
+        {
+            case 0:                
+                break;
+            case 1:
+                dropIndex = Random.Range(1, enemyDrops.Length);                
+                break;
+            default:
+                dropIndex = Random.Range(dropType, enemyDrops.Length);
+                break;
+        }
+
+        Instantiate(enemyDrops[dropIndex], this.transform.position, Quaternion.identity);
+
         Destroy(this.gameObject);
-            Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
-            if (enemyDrops.Length>0)
-            {
-                int index = Random.Range(0, enemyDrops.Length);
-                Instantiate(enemyDrops[index], this.transform.position, Quaternion.identity);
-            }
+        Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
+
+    }
+
+    private int GetDropTypeFromWeapon(string weaponName)
+    {
+        int dropType = 0;
+        
+
+        if (weaponName.Equals("Pistol")) dropType = 1;
+        else if (weaponName.Equals("Machinegun")) dropType = 2;
+        else if (weaponName.Equals("Sniperrifle")) dropType = 3;
+        Debug.Log(weaponName + " "+ dropType);
+        
+        return dropType;
     }
 }

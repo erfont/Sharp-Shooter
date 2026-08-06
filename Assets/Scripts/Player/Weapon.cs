@@ -22,8 +22,8 @@ public class Weapon : MonoBehaviour
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, weaponSO.shootDistance, ~layerMask)) // Invert the mask using '~' to hit everything except 'IgnoreCast'
         {
-            Enemyhealth enemyhealth = hit.collider.GetComponent<Enemyhealth>();
-            enemyhealth?.TakeDamage(weaponSO.Damage); // if (enemyhealth) enemyhealth.TakeDamage(weaponSO.Damage);
+            Enemyhealth enemyhealth = hit.collider.GetComponentInParent<Enemyhealth>();
+            enemyhealth?.TakeDamage(weaponSO.Damage, weaponSO.name); // if (enemyhealth) enemyhealth.TakeDamage(weaponSO.Damage);
             if (!hit.collider.CompareTag("NonShootable")) Instantiate(weaponSO.HitVFXPrefab, hit.point, Quaternion.identity);
         }
 
