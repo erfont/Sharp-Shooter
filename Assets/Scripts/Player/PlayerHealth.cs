@@ -3,26 +3,42 @@ using Unity.Cinemachine;
 using UnityEngine;
 using System;
 using StarterAssets;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
     [Range(1,10)]
     [SerializeField] public int StartHealth = 5;
+
+    [Range(0,100)]
+    [SerializeField] public int StartMojo = 0;
+    
     [Range(1,10)]
     [SerializeField] public int MaxHealth = 10;
+
+    [Range(1,9999)]
+    [SerializeField] public int MaxMojo = 9999;
+    
     [SerializeField] CinemachineVirtualCamera deathVirtualCamera;
     [SerializeField] Transform weaponCamera;
+    
     [SerializeField] Image[] shieldBars;
+    [SerializeField] TMP_Text mojoText;
+    
     [SerializeField] GameObject gameOverContainer;
     [SerializeField] Image crossHair;
-    int currentHealth;
+    
+    int currentHealth, currentMojo;
     int gameOverVirtualCameraPriority = 20;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = StartHealth;
+        currentMojo = StartMojo;
         crossHair.enabled = true;
         AdjustShieldUI();
+        AdjustMojoText();
     }
 
     // Update is called once per frame
@@ -72,5 +88,16 @@ public class PlayerHealth : MonoBehaviour
             }
             else shieldBars[i].gameObject.SetActive(false);
         }
+    }
+
+    public void AdjustMojo(int amount)
+    {
+        currentMojo += amount;
+        AdjustMojoText();
+    }
+
+    private void AdjustMojoText()
+    {
+        mojoText.text = currentMojo.ToString("D4");
     }
 }

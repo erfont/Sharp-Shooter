@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemyhealth
   MaxHealth: 5
   enemyDrops:
-  - {fileID: 7703699217494316596, guid: 7eec66b5a939b9644b9e2b3c1fda4631, type: 3}
+  - {fileID: 4375725534512327384, guid: fdae757edd47b324eabc61192b8c35c7, type: 3}
   - {fileID: 7703699217494316596, guid: 7eec66b5a939b9644b9e2b3c1fda4631, type: 3}
   - {fileID: 7703699217494316596, guid: 7eec66b5a939b9644b9e2b3c1fda4631, type: 3}
   - {fileID: 1511427608886350011, guid: 463f598267d15e24ba9f4750c89caae5, type: 3}

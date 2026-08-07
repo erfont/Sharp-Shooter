@@ -4,9 +4,11 @@ public class WeaponPickup : Pickup
 {
     [SerializeField] WeaponSO weaponSO;
 
-    protected override void OnPickup(ActiveWeapon activeWeapon)
+    protected override void OnPickup()
     {
-         activeWeapon.SwitchWeapon(weaponSO, false);
+        ActiveWeapon activeWeapon = player.GetComponentInChildren<ActiveWeapon>();
+
+        activeWeapon.SwitchWeapon(weaponSO, false);
     }
 
 }

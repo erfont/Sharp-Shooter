@@ -80,9 +80,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.527
       objectReference: {fileID: 0}
+    - target: {fileID: 4307100165818431664, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460871156854348610, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766214938550017681, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5512164000469971252, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: m_Name
       value: Small Crate Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512164000469971252, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8647951920483250292, guid: 00a23bc5feadecb4ca9066600954bc0d, type: 3}
       propertyPath: m_Color.a

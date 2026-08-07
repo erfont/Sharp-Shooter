@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1485531548304240974}
   - component: {fileID: 795343084571610074}
   m_Layer: 8
-  m_Name: Base Weapon Pickup
+  m_Name: Base Pickup
   m_TagString: NonShootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

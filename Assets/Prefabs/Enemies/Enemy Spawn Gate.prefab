@@ -71,11 +71,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemyhealth
   MaxHealth: 10
   enemyDrops:
-  - {fileID: 4745470491821741922, guid: faab6395d4d9fcf44a06a301fc1eff9d, type: 3}
-  - {fileID: 7113678008293958375, guid: 46b0c2e9823b59a44a44b38ed624fe9e, type: 3}
-  - {fileID: 7703699217494316596, guid: 7eec66b5a939b9644b9e2b3c1fda4631, type: 3}
-  - {fileID: 7703699217494316596, guid: 7eec66b5a939b9644b9e2b3c1fda4631, type: 3}
-  - {fileID: 1511427608886350011, guid: 463f598267d15e24ba9f4750c89caae5, type: 3}
+  - {fileID: 1082844124653862245, guid: ecd00804279b2404088810f634f748bb, type: 3}
+  - {fileID: 1082844124653862245, guid: ecd00804279b2404088810f634f748bb, type: 3}
+  - {fileID: 1082844124653862245, guid: ecd00804279b2404088810f634f748bb, type: 3}
+  - {fileID: 1082844124653862245, guid: ecd00804279b2404088810f634f748bb, type: 3}
+  - {fileID: 4375725534512327384, guid: fdae757edd47b324eabc61192b8c35c7, type: 3}
   robotExplosionVFX: {fileID: 1482150934230941238, guid: 1b64ef92ea1c68f47aab59bbe4640542, type: 3}
 --- !u!114 &7725935895953772881
 MonoBehaviour:
