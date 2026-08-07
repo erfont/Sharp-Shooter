@@ -16,6 +16,8 @@ public class ActiveWeapon : MonoBehaviour
 
     Animator animator;
 
+    PlaySoundEffect SFXPlayer;
+
     const string SHOOT_STRING = "Shoot";
     float timeSinceLastShot = 0f;
     float defaultFOV, defaultZoomRotationSpeed;
@@ -29,6 +31,8 @@ public class ActiveWeapon : MonoBehaviour
         animator = GetComponent<Animator>();
         defaultFOV = playerFollowCamera.m_Lens.FieldOfView;
         firstPersonController = GetComponentInParent<FirstPersonController>();
+        SFXPlayer = GetComponent<PlaySoundEffect>();
+        SFXPlayer.SetAudioSource(GetComponent<AudioSource>());
         defaultZoomRotationSpeed = firstPersonController.RotationSpeed;
     }
 
@@ -78,6 +82,7 @@ public class ActiveWeapon : MonoBehaviour
         AdjustAmmo(-1, false);       
         currentWeapon.Shoot(currentWeaponSO);
         animator.Play(SHOOT_STRING, 0, 0f);
+        SFXPlayer.PlaySFX();
 
         if (!currentWeaponSO.IsAutomatic)
         {
@@ -123,6 +128,7 @@ public class ActiveWeapon : MonoBehaviour
             Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
             currentWeapon = newWeapon;
             this.currentWeaponSO = weaponSO;
+            this.SFXPlayer.sfxClip = weaponSO.sfxClip;
             this.AdjustAmmo(weaponSO.magazineSize, false);
             animator.runtimeAnimatorController = weaponSO.weaponAnimator;
             return;
@@ -134,6 +140,7 @@ public class ActiveWeapon : MonoBehaviour
             Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
             currentWeapon = newWeapon;
             this.currentWeaponSO = weaponSO;
+            this.SFXPlayer.sfxClip = weaponSO.sfxClip;
             this.AdjustAmmo(weaponSO.magazineSize, true);
             animator.runtimeAnimatorController = weaponSO.weaponAnimator;
             timeSinceLastShot = currentWeaponSO.FireRate; 

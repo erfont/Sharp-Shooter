@@ -23,3 +23,4 @@ MonoBehaviour:
   ZoomRotationSpeed: 0.3
   magazineSize: 3
   shootDistance: 30
+  sfxClip: {fileID: 8300000, guid: e28b36d9237352244b8e6ec60b4db35c, type: 3}

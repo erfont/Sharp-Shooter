@@ -8,6 +8,9 @@ public class Enemyhealth : MonoBehaviour
     [SerializeField] GameObject robotExplosionVFX;
 
     GameManager gameManager;
+    AudioSource generalAudioSource;
+    PlaySoundEffect SFXPlayer;
+
     int currentHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,6 +18,9 @@ public class Enemyhealth : MonoBehaviour
         gameManager = FindAnyObjectByType<GameManager>();
         gameManager.AdjustEnemiesLeft(1);
         currentHealth = MaxHealth;
+        generalAudioSource = gameManager.GetComponent<AudioSource>();
+        SFXPlayer = GetComponent<PlaySoundEffect>();
+        SFXPlayer.SetAudioSource(generalAudioSource);
     }
 
     // Update is called once per frame
@@ -35,6 +41,7 @@ public class Enemyhealth : MonoBehaviour
 
     public void SelfDestruct(int dropType)
     {
+        SFXPlayer.PlaySFX();
         if (dropType > (enemyDrops.Length - 1)) dropType = 0;
 
         int dropIndex = 0;
@@ -52,7 +59,7 @@ public class Enemyhealth : MonoBehaviour
         }
 
         Instantiate(enemyDrops[dropIndex], this.transform.position, Quaternion.identity);
-        gameManager.AdjustEnemiesLeft(-1);
+        gameManager.AdjustEnemiesLeft(-1);        
         Destroy(this.gameObject);
         Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
 

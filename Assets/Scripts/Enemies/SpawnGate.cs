@@ -21,7 +21,6 @@ public class SpawnGate : MonoBehaviour
         while (player)
         {
             Instantiate(robotPrefab, spawnPoint.position, transform.rotation);
-          //  gameManager.AdjustEnemiesLeft(1);
             yield return new WaitForSeconds(spawnTime);
         }
 
