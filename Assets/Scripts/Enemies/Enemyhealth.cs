@@ -6,10 +6,14 @@ public class Enemyhealth : MonoBehaviour
     [SerializeField] int MaxHealth = 3;
     [SerializeField] Launcher[] enemyDrops;    
     [SerializeField] GameObject robotExplosionVFX;
+
+    GameManager gameManager;
     int currentHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
+        gameManager.AdjustEnemiesLeft(1);
         currentHealth = MaxHealth;
     }
 
@@ -25,7 +29,7 @@ public class Enemyhealth : MonoBehaviour
 
         if (currentHealth <= 0) 
         {
-            SelfDestruct(GetDropTypeFromWeapon(weaponName));
+            SelfDestruct(GetDropTypeFromWeapon(weaponName));            
         }
     }
 
@@ -48,7 +52,7 @@ public class Enemyhealth : MonoBehaviour
         }
 
         Instantiate(enemyDrops[dropIndex], this.transform.position, Quaternion.identity);
-
+        gameManager.AdjustEnemiesLeft(-1);
         Destroy(this.gameObject);
         Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
 
@@ -57,7 +61,6 @@ public class Enemyhealth : MonoBehaviour
     private int GetDropTypeFromWeapon(string weaponName)
     {
         int dropType = 0;
-        
 
         if (weaponName.Equals("Pistol")) dropType = 1;
         else if (weaponName.Equals("Machinegun")) dropType = 2;
